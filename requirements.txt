@@ -1,0 +1,5 @@
+# Install using: pip install -r requirements.txt
+
+# LED and hardware libraries
+neopixel==0.0.1
+adafruit-circuitpython-neopixel==6.4.2
