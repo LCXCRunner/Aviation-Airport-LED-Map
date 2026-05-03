@@ -5,4 +5,4 @@
 # dealing with KiCAD backups and history files
 /KiCAD/aviationAirportLEDMap/.history
 /KiCAD/aviationAirportLEDMap/aviationAirportLEDMap-backups
-
+*.bak
