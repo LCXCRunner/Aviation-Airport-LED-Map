@@ -4819,7 +4819,7 @@
 				)
 			)
 		)
-		(property "Value" "LGU"
+		(property "Value" "KLGU"
 			(at 392.43 78.74 0)
 			(show_name no)
 			(do_not_autoplace no)

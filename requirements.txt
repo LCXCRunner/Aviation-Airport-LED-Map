@@ -1,5 +1,23 @@
 # Install using: pip install -r requirements.txt
+# may need to update using sudo apt update followed by sudo apt install -y portaudio19-dev
+
 
 # LED and hardware libraries
 neopixel==0.0.1
 adafruit-circuitpython-neopixel==6.4.2
+PyAudio==0.2.14
+requests==2.33.1
+
+# install venv:
+# apt install python3.12-venv
+
+# create a venv
+# python3 -m venv venv
+# activate the venv
+# source venv/bin/activate
+
+
+# if pip is not installed, you can install it using:
+
+# Linux (Debian/Ubuntu):
+# sudo apt install -y python3-pip
