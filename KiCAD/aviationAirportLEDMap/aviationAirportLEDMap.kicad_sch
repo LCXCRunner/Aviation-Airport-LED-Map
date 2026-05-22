@@ -2847,6 +2847,16 @@
 	)
 	(wire
 		(pts
+			(xy 162.56 87.63) (xy 176.53 87.63)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "674ec4ba-5b87-411f-af5f-2205eb4a2d5d")
+	)
+	(wire
+		(pts
 			(xy 208.28 60.96) (xy 229.87 60.96)
 		)
 		(stroke
@@ -2894,16 +2904,6 @@
 			(type default)
 		)
 		(uuid "764c915b-3120-4f7b-96b3-391ef64baf91")
-	)
-	(wire
-		(pts
-			(xy 162.56 87.63) (xy 176.53 87.63)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "76a77db6-389d-4f4a-961e-561c71d08bfd")
 	)
 	(wire
 		(pts
@@ -3914,8 +3914,8 @@
 	)
 	(symbol
 		(lib_id "Device:C_Small_US")
-		(at 173.99 78.74 0)
-		(mirror x)
+		(at 191.77 60.96 0)
+		(mirror y)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3925,7 +3925,7 @@
 		(dnp no)
 		(uuid "4b308e58-937e-4a59-8f33-11469d6b114f")
 		(property "Reference" "C1"
-			(at 184.15 73.152 0)
+			(at 181.61 72.898 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3936,7 +3936,7 @@
 			)
 		)
 		(property "Value" "500-1000 uF"
-			(at 189.484 75.184 0)
+			(at 177.038 75.184 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3947,7 +3947,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 173.99 78.74 0)
+			(at 191.77 60.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3958,7 +3958,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 173.99 78.74 0)
+			(at 191.77 60.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3969,7 +3969,7 @@
 			)
 		)
 		(property "Description" "capacitor, small US symbol"
-			(at 173.99 78.74 0)
+			(at 191.77 60.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
