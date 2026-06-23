@@ -15,6 +15,7 @@ def setPixelColorAll(pixelNumber : int, color : tuple):
 
 if __name__ == "__main__":
     setPixelColorAll(0, (255, 0, 0)) # Red
+    pixels.show()
     time.sleep(1)
     print("Pixels set to red.")
     # setPixelColorAll(0, (0, 255, 0)) # Green
