@@ -9,26 +9,29 @@ airports : list[str] = ["KHCR", "KPVU", "KSVR", "KSLC", "KTYV", "KENV", "KHIF", 
 # does not work very well when not run on the pi
 pixels : neopixel.NeoPixel = neopixel.NeoPixel(board.D18, numberOfPixels)
 
-def setPixelColorAll(pixelNumber : int, color : tuple):
+def setPixelColor(pixelNumber : int, color : tuple):
     if pixelNumber < numberOfPixels:
         pixels[pixelNumber] = color
 
 if __name__ == "__main__":
-    setPixelColorAll(0, (255, 0, 0)) # Red
+    setPixelColor(0, (255, 0, 0)) # Red
     pixels.show()
     time.sleep(1)
+    pixels.fill((255, 0, 0)) # Turn off all pixels
+    time.sleep(1)
+    pixels.fill((0, 0, 0)) # Turn off all pixels
     print("Pixels set to red.")
-    # setPixelColorAll(0, (0, 255, 0)) # Green
+    # setPixelColor(0, (0, 255, 0)) # Green
     # time.sleep(1)
-    # setPixelColorAll(0, (0, 0, 255)) # Blue
+    # setPixelColor(0, (0, 0, 255)) # Blue
     # time.sleep(1)
-    # setPixelColorAll(0, (255, 255, 0)) # Yellow
+    # setPixelColor(0, (255, 255, 0)) # Yellow
     # time.sleep(1)
-    # setPixelColorAll(0, (255, 0, 255)) # Magenta
+    # setPixelColor(0, (255, 0, 255)) # Magenta
     # time.sleep(1)
-    # setPixelColorAll(0, (0, 255, 255)) # Cyan
+    # setPixelColor(0, (0, 255, 255)) # Cyan
     # time.sleep(1)
-    # setPixelColorAll(0, (255, 255, 255)) # White
+    # setPixelColor(0, (255, 255, 255)) # White
 
     # for airport in airports:
     #     flightCategory : str = getMetarFlightCategory(airport)
