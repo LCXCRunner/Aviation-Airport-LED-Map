@@ -59,4 +59,4 @@ def getMetarFlightCategory(airportCode : str) -> str:
         return "Unknown"
 
 # for testing
-print(getMetarFlightCategory("KJFK"))
+# print(getMetarFlightCategory("KJFK"))
