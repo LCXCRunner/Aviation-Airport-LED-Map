@@ -1,18 +1,33 @@
 import board
 import neopixel
+import time
 from metarFlightCatagory import getMetarFlightCategory
 
 numberOfPixels : int = 11
 airports : list[str] = ["KHCR", "KPVU", "KSVR", "KSLC", "KTYV", "KENV", "KHIF", "KOGD", "KBMC", "KLGU", "KEVW"]
 
 # does not work very well when not run on the pi
-# pixels = neopixel.NeoPixel(board.D18, numberOfPixels)
+pixels : neopixel.NeoPixel = neopixel.NeoPixel(board.D18, numberOfPixels)
 
-# def setPixelColor(pixelNumber : int, color : tuple):
-#     if pixelNumber < numberOfPixels:
-#         pixels[pixelNumber] = color
+def setPixelColorAll(pixelNumber : int, color : tuple):
+    if pixelNumber < numberOfPixels:
+        pixels[pixelNumber] = color
 
 for airport in airports:
     flightCategory : str = getMetarFlightCategory(airport)
     print()
     print(f"{airport}: {flightCategory}")
+
+setPixelColorAll(0, (255, 0, 0)) # Red
+time.wait(1)
+setPixelColorAll(0, (0, 255, 0)) # Green
+time.wait(1)
+setPixelColorAll(0, (0, 0, 255)) # Blue
+time.wait(1)
+setPixelColorAll(0, (255, 255, 0)) # Yellow
+time.wait(1)
+setPixelColorAll(0, (255, 0, 255)) # Magenta
+time.wait(1)
+setPixelColorAll(0, (0, 255, 255)) # Cyan
+time.wait(1)
+setPixelColorAll(0, (255, 255, 255)) # White
