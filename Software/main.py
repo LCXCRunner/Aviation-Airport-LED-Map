@@ -13,21 +13,21 @@ def setPixelColorAll(pixelNumber : int, color : tuple):
     if pixelNumber < numberOfPixels:
         pixels[pixelNumber] = color
 
-for airport in airports:
-    flightCategory : str = getMetarFlightCategory(airport)
-    print()
-    print(f"{airport}: {flightCategory}")
+# for airport in airports:
+#     flightCategory : str = getMetarFlightCategory(airport)
+#     print()
+#     print(f"{airport}: {flightCategory}")
 
 setPixelColorAll(0, (255, 0, 0)) # Red
-time.wait(1)
-setPixelColorAll(0, (0, 255, 0)) # Green
-time.wait(1)
-setPixelColorAll(0, (0, 0, 255)) # Blue
-time.wait(1)
-setPixelColorAll(0, (255, 255, 0)) # Yellow
-time.wait(1)
-setPixelColorAll(0, (255, 0, 255)) # Magenta
-time.wait(1)
-setPixelColorAll(0, (0, 255, 255)) # Cyan
-time.wait(1)
-setPixelColorAll(0, (255, 255, 255)) # White
+time.sleep(1)
+# setPixelColorAll(0, (0, 255, 0)) # Green
+# time.sleep(1)
+# setPixelColorAll(0, (0, 0, 255)) # Blue
+# time.sleep(1)
+# setPixelColorAll(0, (255, 255, 0)) # Yellow
+# time.sleep(1)
+# setPixelColorAll(0, (255, 0, 255)) # Magenta
+# time.sleep(1)
+# setPixelColorAll(0, (0, 255, 255)) # Cyan
+# time.sleep(1)
+# setPixelColorAll(0, (255, 255, 255)) # White
