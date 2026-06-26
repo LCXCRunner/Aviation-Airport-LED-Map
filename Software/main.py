@@ -3,7 +3,7 @@ import neopixel
 import time
 from metarFlightCatagory import getMetarFlightCategory
 
-numberOfPixels : int = 11
+numberOfPixels : int = 3
 airports : list[str] = ["KHCR", "KPVU", "KSVR", "KSLC", "KTYV", "KENV", "KHIF", "KOGD", "KBMC", "KLGU", "KEVW"]
 
 # does not work very well when not run on the pi
@@ -17,7 +17,7 @@ if __name__ == "__main__":
     setPixelColor(0, (255, 0, 0)) # Red
     pixels.show()
     time.sleep(1)
-    pixels.fill((255, 0, 0)) # Turn off all pixels
+    pixels.fill((0, 255, 0)) # Turn on all pixels
     time.sleep(1)
     pixels.fill((0, 0, 0)) # Turn off all pixels
     print("Pixels set to red.")
