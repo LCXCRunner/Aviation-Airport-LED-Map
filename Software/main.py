@@ -140,6 +140,7 @@ if __name__ == "__main__":
 
                     setPixelColor(i, color)
                 pixels.show()
+                time.sleep(60)  # Wait for 60 seconds before the next update
 
                 
             except Exception as e:
