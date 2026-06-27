@@ -82,7 +82,7 @@ def _fade_to_dim(duration: float = 1.0, steps: int = 20, minimum_brightness: flo
         for i, old_color in enumerate(current_colors):
             faded = tuple(int(old_color[j] * factor) for j in range(3))
             setPixelColor(i, faded)
-        pixels.show()
+        # pixels.show()
         time.sleep(duration / steps)
 
 
