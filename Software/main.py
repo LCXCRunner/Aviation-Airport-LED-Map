@@ -6,6 +6,7 @@ from metarFlightCatagory import getMetarFlightCategory
 numberOfPixels : int = 11
 pixelBuffer : list[tuple] = [(0, 0, 0)] * numberOfPixels
 airports : list[str] = ["KHCR", "KPVU", "KSVR", "KSLC", "KTYV", "KENV", "KHIF", "KOGD", "KBMC", "KLGU", "KEVW"]
+ORDER : neopixel.RGBWOrder = neopixel.GRBW  # Change to RGBW or GRBW if using NeoPixel RGBW/GRBW LEDs
 
 # does not work very well when not run on the pi
 pixels : neopixel.NeoPixel = neopixel.NeoPixel(board.D18, numberOfPixels)
