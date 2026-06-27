@@ -75,10 +75,10 @@ def polling_thread():
             time.sleep(1)
 
 
-def _fade_to_black(duration: float = 1.0, steps: int = 20):
+def _fade_to_dim(duration: float = 1.0, steps: int = 20, minimum_brightness: float = 0.15):
     current_colors = list(pixelBuffer)
     for step in range(steps):
-        factor = 1.0 - (step + 1) / steps
+        factor = 1.0 - ((step + 1) / steps) * (1.0 - minimum_brightness)
         for i, old_color in enumerate(current_colors):
             faded = tuple(int(old_color[j] * factor) for j in range(3))
             setPixelColor(i, faded)
@@ -86,9 +86,9 @@ def _fade_to_black(duration: float = 1.0, steps: int = 20):
         time.sleep(duration / steps)
 
 
-def _fade_from_black(target_colors: list[tuple[int, int, int]], duration: float = 1.0, steps: int = 20):
+def _fade_from_dim(target_colors: list[tuple[int, int, int]], duration: float = 1.0, steps: int = 20, minimum_brightness: float = 0.15):
     for step in range(steps):
-        factor = (step + 1) / steps
+        factor = minimum_brightness + ((step + 1) / steps) * (1.0 - minimum_brightness)
         for i, target_color in enumerate(target_colors):
             faded = tuple(int(target_color[j] * factor) for j in range(3))
             setPixelColor(i, faded)
@@ -113,12 +113,12 @@ def apply_flight_categories_to_pixels():
         else:
             target_colors.append((255, 255, 255))
 
-    _fade_to_black(duration=1.0, steps=20)
+    _fade_to_dim(duration=1.0, steps=20, minimum_brightness=0.15)
 
     for i, color in enumerate(target_colors):
         setPixelColor(i, color)
         pixelBuffer[i] = color
-    _fade_from_black(target_colors, duration=1.0, steps=20)
+    _fade_from_dim(target_colors, duration=1.0, steps=20, minimum_brightness=0.15)
 
 
 def rainbowCycle(pause : float = 0.1):
