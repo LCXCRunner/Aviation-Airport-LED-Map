@@ -26,6 +26,7 @@ def rainbowCycle(pause : float = 0.1):
     colorOrder : list[tuple] = [red, orange, yellow, green, cyan, blue, magenta]
 
     while True:
+        cycles : int = 0
         for i in range(numberOfPixels):
             pixelBuffer[i] = colorOrder[i % len(colorOrder)]
             pixels[i] = pixelBuffer[i]
