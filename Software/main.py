@@ -82,28 +82,28 @@ if __name__ == "__main__":
             flightCategories.append(flightCategory)
             print(f"Initial flight category for {airport}: {flightCategory}")
     else:
+        # red
+        pixels.fill((255, 0, 0))
+        pixels.show()
+        time.sleep(0.5)
+        # green
+        pixels.fill((0, 255, 0))
+        pixels.show()
+        time.sleep(0.5)
+        # cyan
+        pixels.fill((0, 255, 255))
+        pixels.show()
+        time.sleep(0.5)
+        # magenta
+        pixels.fill((255, 0, 255))
+        pixels.show()
+        time.sleep(0.5)
+
+        rainbowCycle(0.25)  # rainbow cycle with 100ms delay per step
+        print("Boot sequence complete. Starting main loop.")
+
         while True:
             try:
-                # red
-                pixels.fill((255, 0, 0))
-                pixels.show()
-                time.sleep(0.5)
-                # green
-                pixels.fill((0, 255, 0))
-                pixels.show()
-                time.sleep(0.5)
-                # cyan
-                pixels.fill((0, 255, 255))
-                pixels.show()
-                time.sleep(0.5)
-                # magenta
-                pixels.fill((255, 0, 255))
-                pixels.show()
-                time.sleep(0.5)
-
-                rainbowCycle(0.25)  # rainbow cycle with 100ms delay per step
-                print("Boot sequence complete. Starting main loop.")
-
                 # get initial flight categories for all airports
                 # possible flight categories: VFR, MVFR, IFR, LIFR, Unknown
                 # VFR: Visual Flight Rules - Green
@@ -119,7 +119,7 @@ if __name__ == "__main__":
                     flightCategory : str = getMetarFlightCategory(airports[i])
                     flightCategories.append(flightCategory)
                     # print(f"Initial flight category for {airport}: {flightCategory}")
-                    
+
                 print(flightCategories)
 
                 # i want some sort of dim out between this and the next loop, but for now, just a pause.
