@@ -6,7 +6,6 @@ from metarFlightCatagory import getMetarFlightCategory
 numberOfPixels : int = 11
 pixelBuffer : list[tuple] = [(0, 0, 0)] * numberOfPixels
 airports : list[str] = ["KHCR", "KPVU", "KSVR", "KSLC", "KTYV", "KENV", "KHIF", "KOGD", "KBMC", "KLGU", "KEVW"]
-ORDER : neopixel.RGBWOrder = neopixel.GRBW  # Change to RGBW or GRBW if using NeoPixel RGBW/GRBW LEDs
 
 # does not work very well when not run on the pi
 pixels : neopixel.NeoPixel = neopixel.NeoPixel(board.D18, numberOfPixels)
@@ -14,37 +13,6 @@ pixels : neopixel.NeoPixel = neopixel.NeoPixel(board.D18, numberOfPixels)
 def setPixelColor(pixelNumber : int, color : tuple):
     if pixelNumber < numberOfPixels:
         pixels[pixelNumber] = color
-
-def wheel(pos):
-    # Input a value 0 to 255 to get a color value.
-    # The colours are a transition r - g - b - back to r.
-    if pos < 0 or pos > 255:
-        r = g = b = 0
-    elif pos < 85:
-        r = int(pos * 3)
-        g = int(255 - pos * 3)
-        b = 0
-    elif pos < 170:
-        pos -= 85
-        r = int(255 - pos * 3)
-        g = 0
-        b = int(pos * 3)
-    else:
-        pos -= 170
-        r = 0
-        g = int(pos * 3)
-        b = int(255 - pos * 3)
-    return (r, g, b) if ORDER in {neopixel.RGB, neopixel.GRB} else (r, g, b, 0)
-
-
-def rainbow_cycle(wait):
-    for j in range(255):
-        for i in range(numberOfPixels):
-            pixel_index = (i * 256 // numberOfPixels) + j
-            pixels[i] = wheel(pixel_index & 255)
-        pixels.show()
-        time.sleep(wait)
-
 
 def rainbowCycle(pause : float = 0.1):
     red : tuple = (255, 0, 0)
@@ -60,11 +28,11 @@ def rainbowCycle(pause : float = 0.1):
     while True:
         cycles : int = 0
         for i in range(numberOfPixels):
-            pixelBuffer[i] = colorOrder[i % len(colorOrder)]
+            pixelBuffer[i] = colorOrder[i + cycles % len(colorOrder)]
             pixels[i] = pixelBuffer[i]
             pixels.show()
         cycles += 1
-        if cycles >= 10:
+        if cycles >= 25:
             pixels.fill((0, 0, 0)) # Turn off all pixels
             pixels.show()
             break
@@ -74,31 +42,21 @@ if __name__ == "__main__":
     while True:
         cycle : int = 0
 
-        # Comment this line out if you have RGBW/GRBW NeoPixels
+        # red
         pixels.fill((255, 0, 0))
-        # Uncomment this line if you have RGBW/GRBW NeoPixels
-        # pixels.fill((255, 0, 0, 0))
         pixels.show()
-        time.sleep(1)
-
-        # Comment this line out if you have RGBW/GRBW NeoPixels
+        time.sleep(0.5)
+        # green
         pixels.fill((0, 255, 0))
-        # Uncomment this line if you have RGBW/GRBW NeoPixels
-        # pixels.fill((0, 255, 0, 0))
         pixels.show()
-        time.sleep(1)
-
-        # Comment this line out if you have RGBW/GRBW NeoPixels
-        pixels.fill((0, 0, 255))
-        # Uncomment this line if you have RGBW/GRBW NeoPixels
-        # pixels.fill((0, 0, 255, 0))
+        time.sleep(0.5)
+        # cyan
+        pixels.fill((0, 255, 255))
         pixels.show()
-        time.sleep(1)
+        time.sleep(0.5)
+        # magenta
+        pixels.fill((255, 0, 255))
+        pixels.show()
+        time.sleep(0.5)
 
-        rainbow_cycle(0.001)  # rainbow cycle with 1ms delay per step
-
-        cycle += 1
-        if cycle >= 100:
-            pixels.fill((0, 0, 0)) # Turn off all pixels
-            pixels.show()
-            break
+        rainbowCycle(0.1)  # rainbow cycle with 100ms delay per step
