@@ -61,11 +61,11 @@ def rainbowCycle(pause : float = 0.1):
         for i in range(numberOfPixels):
             pixelBuffer[i] = colorOrder[(i + cycles) % len(colorOrder)]
             pixels[i] = pixelBuffer[i]
-            # pixels.show()
+            pixels.show()
         cycles += 1
         if cycles >= 25:
-            # pixels.fill((0, 0, 0)) # Turn off all pixels
-            # pixels.show()
+            pixels.fill((0, 0, 0)) # Turn off all pixels
+            pixels.show()
             break
         time.sleep(pause)
 
@@ -74,21 +74,22 @@ if __name__ == "__main__":
         print("Running in software fallback mode because no Raspberry Pi LED hardware was detected.")
         rainbowCycle(0.1)
     else:
-        # # red
-        # pixels.fill((255, 0, 0))
-        # pixels.show()
-        # time.sleep(0.5)
-        # # green
-        # pixels.fill((0, 255, 0))
-        # pixels.show()
-        # time.sleep(0.5)
-        # # cyan
-        # pixels.fill((0, 255, 255))
-        # pixels.show()
-        # time.sleep(0.5)
-        # # magenta
-        # pixels.fill((255, 0, 255))
-        # pixels.show()
-        # time.sleep(0.5)
+        # red
+        pixels.fill((255, 0, 0))
+        pixels.show()
+        time.sleep(0.5)
+        # green
+        pixels.fill((0, 255, 0))
+        pixels.show()
+        time.sleep(0.5)
+        # cyan
+        pixels.fill((0, 255, 255))
+        pixels.show()
+        time.sleep(0.5)
+        # magenta
+        pixels.fill((255, 0, 255))
+        pixels.show()
+        time.sleep(0.5)
 
-        rainbowCycle(0.1)  # rainbow cycle with 100ms delay per step
+        rainbowCycle(0.25)  # rainbow cycle with 100ms delay per step
+        print("Boot sequence complete. Starting main loop.")
