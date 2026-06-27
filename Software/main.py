@@ -19,7 +19,7 @@ airportDict : dict[str, str] = {airport: "Unknown" for airport in airports}
 flight_update_lock = threading.Lock()
 flight_update_event = threading.Event()
 stop_event = threading.Event()
-polling_interval_seconds = 1 * 60
+polling_interval_seconds = 0.5 * 60
 
 class _MockNeoPixel:
     def __init__(self, pin, count):
@@ -117,6 +117,7 @@ def apply_flight_categories_to_pixels():
 
     for i, color in enumerate(target_colors):
         setPixelColor(i, color)
+        pixelBuffer[i] = color
     _fade_from_black(target_colors, duration=1.0, steps=20)
 
 
