@@ -82,53 +82,69 @@ if __name__ == "__main__":
             flightCategories.append(flightCategory)
             print(f"Initial flight category for {airport}: {flightCategory}")
     else:
-        # red
-        pixels.fill((255, 0, 0))
-        pixels.show()
-        time.sleep(0.5)
-        # green
-        pixels.fill((0, 255, 0))
-        pixels.show()
-        time.sleep(0.5)
-        # cyan
-        pixels.fill((0, 255, 255))
-        pixels.show()
-        time.sleep(0.5)
-        # magenta
-        pixels.fill((255, 0, 255))
-        pixels.show()
-        time.sleep(0.5)
+        while True:
+            try:
+                # red
+                pixels.fill((255, 0, 0))
+                pixels.show()
+                time.sleep(0.5)
+                # green
+                pixels.fill((0, 255, 0))
+                pixels.show()
+                time.sleep(0.5)
+                # cyan
+                pixels.fill((0, 255, 255))
+                pixels.show()
+                time.sleep(0.5)
+                # magenta
+                pixels.fill((255, 0, 255))
+                pixels.show()
+                time.sleep(0.5)
 
-        rainbowCycle(0.25)  # rainbow cycle with 100ms delay per step
-        print("Boot sequence complete. Starting main loop.")
+                rainbowCycle(0.25)  # rainbow cycle with 100ms delay per step
+                print("Boot sequence complete. Starting main loop.")
 
-        # get initial flight categories for all airports
-        # possible flight categories: VFR, MVFR, IFR, LIFR, Unknown
-        # VFR: Visual Flight Rules - Green
-        # MVFR: Marginal VFR - Blue
-        # IFR: Instrument Flight Rules - Red
-        # LIFR: Low IFR - Magenta
-        # Unknown: Unknown - White
+                # get initial flight categories for all airports
+                # possible flight categories: VFR, MVFR, IFR, LIFR, Unknown
+                # VFR: Visual Flight Rules - Green
+                # MVFR: Marginal VFR - Blue
+                # IFR: Instrument Flight Rules - Red
+                # LIFR: Low IFR - Magenta
+                # Unknown: Unknown - White
 
-        flightCategories : list[str] = []
-        for i in range(len(airports)):
+                # inital setup of the board, threads should handle it from there. 
+                flightCategories : list[str] = []
+                for i in range(len(airports)):
 
-            flightCategory : str = getMetarFlightCategory(airports[i])
-            flightCategories.append(flightCategory)
-            # print(f"Initial flight category for {airport}: {flightCategory}")
+                    flightCategory : str = getMetarFlightCategory(airports[i])
+                    flightCategories.append(flightCategory)
+                    # print(f"Initial flight category for {airport}: {flightCategory}")
+                    
+                print(flightCategories)
 
-            if flightCategory == "VFR":
-                color : tuple = (0, 255, 0)  # Green
-            elif flightCategory == "MVFR":
-                color : tuple = (0, 0, 255)  # Blue
-            elif flightCategory == "IFR":
-                color : tuple = (255, 0, 0)  # Red
-            elif flightCategory == "LIFR":
-                color : tuple = (255, 0, 255)  # Magenta
-            else:
-                color : tuple = (255, 255, 255)  # White for Unknown
-            
-            setPixelColor(i, color)
+                # i want some sort of dim out between this and the next loop, but for now, just a pause.
+                time.sleep(1)
 
-        time.sleep(30)
-        pixels.fill((0, 0, 0)) # Turn off all pixels
+                # let the loop figure out the catagories and set the colors accordingly.
+                for i in range(len(airports)):
+                    if flightCategory == "VFR":
+                        color : tuple = (0, 255, 0)  # Green
+                    elif flightCategory == "MVFR":
+                        color : tuple = (0, 0, 255)  # Blue
+                    elif flightCategory == "IFR":
+                        color : tuple = (255, 0, 0)  # Red
+                    elif flightCategory == "LIFR":
+                        color : tuple = (255, 0, 255)  # Magenta
+                    else:
+                        color : tuple = (255, 255, 255)  # White for Unknown
+
+                    setPixelColor(i, color)
+
+                
+            except Exception as e:
+                print("Error in main loop: " + str(e))
+                pixels.fill((0, 0, 0)) # Turn off all pixels
+                break
+            finally:
+                pixels.fill((0, 0, 0)) # Turn off all pixels
+                pixels.show()
