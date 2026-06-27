@@ -74,22 +74,21 @@ if __name__ == "__main__":
         print("Running in software fallback mode because no Raspberry Pi LED hardware was detected.")
         rainbowCycle(0.1)
     else:
-        while True:
-            # # red
-            # pixels.fill((255, 0, 0))
-            # pixels.show()
-            # time.sleep(0.5)
-            # # green
-            # pixels.fill((0, 255, 0))
-            # pixels.show()
-            # time.sleep(0.5)
-            # # cyan
-            # pixels.fill((0, 255, 255))
-            # pixels.show()
-            # time.sleep(0.5)
-            # # magenta
-            # pixels.fill((255, 0, 255))
-            # pixels.show()
-            # time.sleep(0.5)
+        # # red
+        # pixels.fill((255, 0, 0))
+        # pixels.show()
+        # time.sleep(0.5)
+        # # green
+        # pixels.fill((0, 255, 0))
+        # pixels.show()
+        # time.sleep(0.5)
+        # # cyan
+        # pixels.fill((0, 255, 255))
+        # pixels.show()
+        # time.sleep(0.5)
+        # # magenta
+        # pixels.fill((255, 0, 255))
+        # pixels.show()
+        # time.sleep(0.5)
 
-            rainbowCycle(0.1)  # rainbow cycle with 100ms delay per step
+        rainbowCycle(0.1)  # rainbow cycle with 100ms delay per step
