@@ -14,6 +14,7 @@ from metarFlightCatagory import getMetarFlightCategory
 numberOfPixels : int = 11
 pixelBuffer : list[tuple[int, int, int]] = [(0, 0, 0)] * numberOfPixels
 airports : list[str] = ["KHCR", "KPVU", "KSVR", "KSLC", "KTYV", "KENV", "KHIF", "KOGD", "KBMC", "KLGU", "KEVW"]
+airportDict : dict[str, str] = {}
 
 class _MockNeoPixel:
     def __init__(self, pin, count):
@@ -70,9 +71,16 @@ def rainbowCycle(pause : float = 0.1):
         time.sleep(pause)
 
 if __name__ == "__main__":
+    # mainly for testing purposes
     if not hardware_available:
         print("Running in software fallback mode because no Raspberry Pi LED hardware was detected.")
-        rainbowCycle(0.1)
+
+        # get initial flight categories for all airports
+        flightCategories : list[str] = []
+        for airport in airports:
+            flightCategory : str = getMetarFlightCategory(airport)
+            flightCategories.append(flightCategory)
+            print(f"Initial flight category for {airport}: {flightCategory}")
     else:
         # red
         pixels.fill((255, 0, 0))
@@ -93,3 +101,34 @@ if __name__ == "__main__":
 
         rainbowCycle(0.25)  # rainbow cycle with 100ms delay per step
         print("Boot sequence complete. Starting main loop.")
+
+        # get initial flight categories for all airports
+        # possible flight categories: VFR, MVFR, IFR, LIFR, Unknown
+        # VFR: Visual Flight Rules - Green
+        # MVFR: Marginal VFR - Blue
+        # IFR: Instrument Flight Rules - Red
+        # LIFR: Low IFR - Magenta
+        # Unknown: Unknown - White
+
+        flightCategories : list[str] = []
+        for airport in airports:
+
+            flightCategory : str = getMetarFlightCategory(airport)
+            flightCategories.append(flightCategory)
+            # print(f"Initial flight category for {airport}: {flightCategory}")
+
+            if flightCategory == "VFR":
+                color : tuple = (0, 255, 0)  # Green
+            elif flightCategory == "MVFR":
+                color : tuple = (0, 0, 255)  # Blue
+            elif flightCategory == "IFR":
+                color : tuple = (255, 0, 0)  # Red
+            elif flightCategory == "LIFR":
+                color : tuple = (255, 0, 255)  # Magenta
+            else:
+                color : tuple = (255, 255, 255)  # White for Unknown
+            
+            setPixelColor(flightCategories.index(flightCategory), color)
+
+        time.sleep(30)
+        pixels.fill((0, 0, 0)) # Turn off all pixels

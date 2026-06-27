@@ -7,7 +7,7 @@ def getMetarFlightCategory(airportCode : str) -> str:
     zuluTime : str = datetime.now(timezone.utc).strftime('%Y%m%d_%H%M')
     zuluTimeReadable : str = datetime.now(timezone.utc).strftime('%B %d, %Y %H:%M UTC')
 
-    print(zuluTime)
+    # print(zuluTime)
     print(zuluTimeReadable)
     
     url : str = "https://aviationweather.gov/api/data/metar"
