@@ -19,7 +19,7 @@ airportDict : dict[str, str] = {airport: "Unknown" for airport in airports}
 flight_update_lock = threading.Lock()
 flight_update_event = threading.Event()
 stop_event = threading.Event()
-polling_interval_seconds : int = int(0.5 * 60)
+polling_interval_seconds : int = int(15 * 60)
 
 class _MockNeoPixel:
     def __init__(self, pin, count):
