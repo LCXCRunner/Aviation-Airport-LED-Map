@@ -75,24 +75,49 @@ def polling_thread():
             time.sleep(1)
 
 
+def _fade_to_black(duration: float = 1.0, steps: int = 20):
+    current_colors = list(pixelBuffer)
+    for step in range(steps):
+        factor = 1.0 - (step + 1) / steps
+        for i, old_color in enumerate(current_colors):
+            faded = tuple(int(old_color[j] * factor) for j in range(3))
+            setPixelColor(i, faded)
+        pixels.show()
+        time.sleep(duration / steps)
+
+
+def _fade_from_black(target_colors: list[tuple[int, int, int]], duration: float = 1.0, steps: int = 20):
+    for step in range(steps):
+        factor = (step + 1) / steps
+        for i, target_color in enumerate(target_colors):
+            faded = tuple(int(target_color[j] * factor) for j in range(3))
+            setPixelColor(i, faded)
+        pixels.show()
+        time.sleep(duration / steps)
+
+
 def apply_flight_categories_to_pixels():
     with flight_update_lock:
         categories = [airportDict[airport] for airport in airports]
 
-    for i, flightCategory in enumerate(categories):
+    target_colors : list[tuple[int, int, int]] = []
+    for flightCategory in categories:
         if flightCategory == "VFR":
-            color : tuple[int, int, int] = (0, 255, 0)
+            target_colors.append((0, 255, 0))
         elif flightCategory == "MVFR":
-            color : tuple[int, int, int] = (0, 0, 255)
+            target_colors.append((0, 0, 255))
         elif flightCategory == "IFR":
-            color : tuple[int, int, int] = (255, 0, 0)
+            target_colors.append((255, 0, 0))
         elif flightCategory == "LIFR":
-            color : tuple[int, int, int] = (255, 0, 255)
+            target_colors.append((255, 0, 255))
         else:
-            color : tuple[int, int, int] = (255, 255, 255)
+            target_colors.append((255, 255, 255))
 
+    _fade_to_black(duration=1.0, steps=20)
+
+    for i, color in enumerate(target_colors):
         setPixelColor(i, color)
-    pixels.show()
+    _fade_from_black(target_colors, duration=1.0, steps=20)
 
 
 def rainbowCycle(pause : float = 0.1):
