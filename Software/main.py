@@ -111,9 +111,9 @@ if __name__ == "__main__":
         # Unknown: Unknown - White
 
         flightCategories : list[str] = []
-        for airport in airports:
+        for i in range(len(airports)):
 
-            flightCategory : str = getMetarFlightCategory(airport)
+            flightCategory : str = getMetarFlightCategory(airports[i])
             flightCategories.append(flightCategory)
             # print(f"Initial flight category for {airport}: {flightCategory}")
 
@@ -128,7 +128,7 @@ if __name__ == "__main__":
             else:
                 color : tuple = (255, 255, 255)  # White for Unknown
             
-            setPixelColor(flightCategories.index(flightCategory), color)
+            setPixelColor(i, color)
 
         time.sleep(30)
         pixels.fill((0, 0, 0)) # Turn off all pixels
