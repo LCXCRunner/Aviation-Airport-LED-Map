@@ -139,11 +139,13 @@ if __name__ == "__main__":
                         color : tuple = (255, 255, 255)  # White for Unknown
 
                     setPixelColor(i, color)
+                pixels.show()
 
                 
             except Exception as e:
                 print("Error in main loop: " + str(e))
                 pixels.fill((0, 0, 0)) # Turn off all pixels
+                pixels.show()
                 break
             finally:
                 pixels.fill((0, 0, 0)) # Turn off all pixels
