@@ -28,7 +28,7 @@ def rainbowCycle(pause : float = 0.1):
     while True:
         cycles : int = 0
         for i in range(numberOfPixels):
-            pixelBuffer[i] = colorOrder[i + cycles % len(colorOrder)]
+            pixelBuffer[i] = colorOrder[(i + cycles) % len(colorOrder)]
             pixels[i] = pixelBuffer[i]
             pixels.show()
         cycles += 1
