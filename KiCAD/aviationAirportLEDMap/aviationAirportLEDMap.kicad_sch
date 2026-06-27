@@ -324,162 +324,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Device:C_Small_US"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0.254)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "C1"
-				(at 11.938 -6.35 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify right)
-				)
-			)
-			(property "Value" "500-1000 uF"
-				(at 15.748 -4.318 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify right)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "capacitor, small US symbol"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "cap capacitor"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "C_*"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "C_Small_US_0_1"
-				(arc
-					(start 8.128 -7.366)
-					(mid 8.5166 -8.89)
-					(end 8.128 -10.414)
-					(stroke
-						(width 0.3048)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 9.398 -7.366) (xy 9.398 -10.414)
-					)
-					(stroke
-						(width 0.3048)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "C_Small_US_1_1"
-				(pin passive line
-					(at 11.43 -8.89 180)
-					(length 2.032)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 6.35 -8.89 0)
-					(length 2.032)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Device:Fuse"
 			(pin_numbers
 				(hide yes)
@@ -615,195 +459,6 @@
 				)
 				(pin passive line
 					(at 17.78 -6.35 0)
-					(length 1.27)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "Device:R_US"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "R"
-				(at 2.54 0 90)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "R_US"
-				(at -2.54 0 90)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 1.016 -0.254 90)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "Resistor, US symbol"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "R res resistor"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "R_*"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "R_US_0_1"
-				(polyline
-					(pts
-						(xy 0 2.286) (xy 0 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 2.286) (xy 1.016 1.905) (xy 0 1.524) (xy -1.016 1.143) (xy 0 0.762)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 0.762) (xy 1.016 0.381) (xy 0 0) (xy -1.016 -0.381) (xy 0 -0.762)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 -0.762) (xy 1.016 -1.143) (xy 0 -1.524) (xy -1.016 -1.905) (xy 0 -2.286)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 -2.286) (xy 0 -2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "R_US_1_1"
-				(pin passive line
-					(at 0 3.81 270)
-					(length 1.27)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -3.81 90)
 					(length 1.27)
 					(name ""
 						(effects
@@ -2454,10 +2109,10 @@
 		(uuid "d7f136cc-20ca-4f93-8216-6a96e4da2254")
 	)
 	(junction
-		(at 173.99 69.85)
+		(at 172.72 60.96)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "05b3dda7-f9c6-46e9-9ba8-f4a6e0a1ca4e")
+		(uuid "347b0aa9-a344-4464-8766-30a433867654")
 	)
 	(junction
 		(at 191.77 55.88)
@@ -2494,16 +2149,6 @@
 			(type default)
 		)
 		(uuid "06acf582-2f26-4193-b800-578dd7792f58")
-	)
-	(wire
-		(pts
-			(xy 132.08 69.85) (xy 120.65 69.85)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "08d91e62-95e1-40eb-adee-88e24310c2be")
 	)
 	(wire
 		(pts
@@ -2547,16 +2192,6 @@
 	)
 	(wire
 		(pts
-			(xy 189.23 60.96) (xy 198.12 60.96)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1395f1c6-9251-43a1-90a3-cd886efe69cf")
-	)
-	(wire
-		(pts
 			(xy 31.75 128.27) (xy 60.96 128.27)
 		)
 		(stroke
@@ -2587,16 +2222,6 @@
 	)
 	(wire
 		(pts
-			(xy 161.29 58.42) (xy 198.12 58.42)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1f814cc3-b1c4-4eea-a831-35463249ca81")
-	)
-	(wire
-		(pts
 			(xy 176.53 78.74) (xy 176.53 87.63)
 		)
 		(stroke
@@ -2614,16 +2239,6 @@
 			(type default)
 		)
 		(uuid "226ddffa-40e3-4654-90d2-3790f13d2adb")
-	)
-	(wire
-		(pts
-			(xy 189.23 69.85) (xy 189.23 60.96)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2554cc31-7ded-4049-9c24-bae2374b9953")
 	)
 	(wire
 		(pts
@@ -2677,7 +2292,7 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 60.96) (xy 116.84 60.96)
+			(xy 116.84 60.96) (xy 133.35 60.96)
 		)
 		(stroke
 			(width 0)
@@ -2694,16 +2309,6 @@
 			(type default)
 		)
 		(uuid "3822921e-ce54-48b2-b6de-30a58be73a61")
-	)
-	(wire
-		(pts
-			(xy 116.84 55.88) (xy 191.77 55.88)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "38d73430-05ef-4220-aad8-45c29e8a818d")
 	)
 	(wire
 		(pts
@@ -2764,6 +2369,16 @@
 			(type default)
 		)
 		(uuid "4c98ce4e-ad81-4ff4-af32-7b2ce965e007")
+	)
+	(wire
+		(pts
+			(xy 172.72 60.96) (xy 198.12 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4dfe262c-932b-4d6b-819b-a7f2b9f5cf88")
 	)
 	(wire
 		(pts
@@ -2927,16 +2542,6 @@
 	)
 	(wire
 		(pts
-			(xy 173.99 69.85) (xy 173.99 85.09)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7aac4994-04b1-4bc8-b8d7-4936d701d225")
-	)
-	(wire
-		(pts
 			(xy 364.49 85.09) (xy 382.27 85.09)
 		)
 		(stroke
@@ -2947,16 +2552,6 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 69.85) (xy 120.65 60.96)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "89e0ff98-c6da-4324-b424-ff556db1a4cd")
-	)
-	(wire
-		(pts
 			(xy 226.06 71.12) (xy 226.06 87.63)
 		)
 		(stroke
@@ -2964,6 +2559,16 @@
 			(type default)
 		)
 		(uuid "8a05280f-4089-4474-ab69-7de1fc7a8442")
+	)
+	(wire
+		(pts
+			(xy 172.72 60.96) (xy 172.72 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8a1f1b3b-ec40-4394-a1ff-0ce458997d97")
 	)
 	(wire
 		(pts
@@ -2984,16 +2589,6 @@
 			(type default)
 		)
 		(uuid "8b6c2d84-4ceb-4bdf-9e5e-f27f838b116f")
-	)
-	(wire
-		(pts
-			(xy 162.56 85.09) (xy 173.99 85.09)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8c45319d-814f-43b5-80de-881c1b8681ae")
 	)
 	(wire
 		(pts
@@ -3067,7 +2662,17 @@
 	)
 	(wire
 		(pts
-			(xy 161.29 69.85) (xy 173.99 69.85)
+			(xy 172.72 85.09) (xy 162.56 85.09)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a1e3a249-8d50-4fae-b03c-5c1c43587eb0")
+	)
+	(wire
+		(pts
+			(xy 162.56 60.96) (xy 172.72 60.96)
 		)
 		(stroke
 			(width 0)
@@ -3104,16 +2709,6 @@
 			(type default)
 		)
 		(uuid "a81460a8-4626-4285-bf3d-be68e0ad1cac")
-	)
-	(wire
-		(pts
-			(xy 173.99 69.85) (xy 180.34 69.85)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ab90b9c2-ae7c-44ab-9c9d-b28a9de8c620")
 	)
 	(wire
 		(pts
@@ -3197,6 +2792,16 @@
 	)
 	(wire
 		(pts
+			(xy 116.84 55.88) (xy 191.77 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c9b605c8-da4b-4391-a6d8-8ef6999982a9")
+	)
+	(wire
+		(pts
 			(xy 97.79 123.19) (xy 97.79 85.09)
 		)
 		(stroke
@@ -3227,7 +2832,7 @@
 	)
 	(wire
 		(pts
-			(xy 116.84 58.42) (xy 153.67 58.42)
+			(xy 116.84 58.42) (xy 198.12 58.42)
 		)
 		(stroke
 			(width 0)
@@ -3247,7 +2852,7 @@
 	)
 	(wire
 		(pts
-			(xy 139.7 69.85) (xy 153.67 69.85)
+			(xy 140.97 60.96) (xy 154.94 60.96)
 		)
 		(stroke
 			(width 0)
@@ -3364,16 +2969,6 @@
 			(type default)
 		)
 		(uuid "faecad2e-3c6c-4a08-b82e-3222c64c2474")
-	)
-	(wire
-		(pts
-			(xy 185.42 69.85) (xy 189.23 69.85)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fe5c254d-2dd8-4986-8743-f12645b304e7")
 	)
 	(wire
 		(pts
@@ -3907,88 +3502,6 @@
 			(project "aviationAirportLEDMap"
 				(path "/bb4d51de-b267-46b0-9031-e0a063ab12a0"
 					(reference "LED9")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C_Small_US")
-		(at 191.77 60.96 0)
-		(mirror y)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "4b308e58-937e-4a59-8f33-11469d6b114f")
-		(property "Reference" "C1"
-			(at 181.61 72.898 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "500-1000 uF"
-			(at 177.038 75.184 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" ""
-			(at 191.77 60.96 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 191.77 60.96 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "capacitor, small US symbol"
-			(at 191.77 60.96 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "048e7104-a7d7-48ac-8cdf-24421cb2d2eb")
-		)
-		(pin "1"
-			(uuid "d301fc3f-25e1-4635-a28e-510d7bc75348")
-		)
-		(instances
-			(project "aviationAirportLEDMap"
-				(path "/bb4d51de-b267-46b0-9031-e0a063ab12a0"
-					(reference "C1")
 					(unit 1)
 				)
 			)
@@ -4639,7 +4152,7 @@
 	)
 	(symbol
 		(lib_id "Device:Fuse")
-		(at 114.3 63.5 0)
+		(at 115.57 54.61 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4649,7 +4162,7 @@
 		(dnp no)
 		(uuid "b8d92c2b-066d-46f6-b18f-79fceab85c46")
 		(property "Reference" "F1"
-			(at 134.62 73.406 0)
+			(at 135.89 64.516 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4660,7 +4173,7 @@
 			)
 		)
 		(property "Value" "FAST BLOW 2.5A-250V FUSE"
-			(at 121.666 75.946 0)
+			(at 122.936 67.056 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4671,7 +4184,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 112.522 63.5 90)
+			(at 113.792 54.61 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4682,7 +4195,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 114.3 63.5 0)
+			(at 115.57 54.61 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4693,7 +4206,7 @@
 			)
 		)
 		(property "Description" "Fuse"
-			(at 119.126 65.5321 0)
+			(at 120.396 56.6421 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4720,7 +4233,7 @@
 	)
 	(symbol
 		(lib_id "Diode:1N5822")
-		(at 157.48 69.85 0)
+		(at 158.75 60.96 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4730,7 +4243,7 @@
 		(dnp no)
 		(uuid "c04c8f77-4c52-4fac-b071-c561c9ad2e56")
 		(property "Reference" "D2"
-			(at 157.226 73.406 0)
+			(at 158.496 64.516 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4740,7 +4253,7 @@
 			)
 		)
 		(property "Value" "1N5822"
-			(at 157.226 75.946 0)
+			(at 158.496 67.056 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4750,7 +4263,7 @@
 			)
 		)
 		(property "Footprint" "Diode_THT:D_DO-201AD_P15.24mm_Horizontal"
-			(at 157.48 74.295 0)
+			(at 158.75 65.405 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4761,7 +4274,7 @@
 			)
 		)
 		(property "Datasheet" "http://www.vishay.com/docs/88526/1n5820.pdf"
-			(at 157.48 69.85 0)
+			(at 158.75 60.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4772,7 +4285,7 @@
 			)
 		)
 		(property "Description" "40V 3A Schottky Barrier Rectifier Diode, DO-201AD"
-			(at 157.48 69.85 0)
+			(at 158.75 60.96 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5245,87 +4758,6 @@
 			(project "aviationAirportLEDMap"
 				(path "/bb4d51de-b267-46b0-9031-e0a063ab12a0"
 					(reference "LED4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R_US")
-		(at 157.48 58.42 90)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "fcef2ca2-8c55-455d-aba9-e8d379de3245")
-		(property "Reference" "R1"
-			(at 156.464 60.96 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "300-900Ω"
-			(at 152.654 63.246 90)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" ""
-			(at 157.734 57.404 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 157.48 58.42 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Resistor, US symbol"
-			(at 157.48 58.42 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "80a5377a-ad71-49e6-9856-a497353c72b9")
-		)
-		(pin "1"
-			(uuid "f8a7cc9c-4df7-4764-b203-2924d33b00c7")
-		)
-		(instances
-			(project "aviationAirportLEDMap"
-				(path "/bb4d51de-b267-46b0-9031-e0a063ab12a0"
-					(reference "R1")
 					(unit 1)
 				)
 			)

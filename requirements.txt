@@ -5,6 +5,7 @@
 # LED and hardware libraries
 neopixel==0.0.1
 adafruit-circuitpython-neopixel==6.4.2
+setuptools>=80.0
 PyAudio==0.2.14
 requests==2.33.1
 
