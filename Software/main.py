@@ -1,14 +1,45 @@
-import board
-import neopixel
+try:
+    import board
+except Exception:
+    board = None
+
+try:
+    import neopixel
+except Exception:
+    neopixel = None
+
 import time
 from metarFlightCatagory import getMetarFlightCategory
 
 numberOfPixels : int = 11
-pixelBuffer : list[tuple] = [(0, 0, 0)] * numberOfPixels
+pixelBuffer : list[tuple[int, int, int]] = [(0, 0, 0)] * numberOfPixels
 airports : list[str] = ["KHCR", "KPVU", "KSVR", "KSLC", "KTYV", "KENV", "KHIF", "KOGD", "KBMC", "KLGU", "KEVW"]
 
-# does not work very well when not run on the pi
-pixels : neopixel.NeoPixel = neopixel.NeoPixel(board.D18, numberOfPixels)
+class _MockNeoPixel:
+    def __init__(self, pin, count):
+        self._pixels = [(0, 0, 0)] * count
+
+    def __setitem__(self, index, value):
+        self._pixels[index] = value
+
+    def __getitem__(self, index):
+        return self._pixels[index]
+
+    def fill(self, color):
+        self._pixels = [color] * len(self._pixels)
+
+    def show(self):
+        pass
+
+
+def create_pixels():
+    if neopixel is None or board is None:
+        return _MockNeoPixel(None, numberOfPixels)
+    return neopixel.NeoPixel(board.D18, numberOfPixels)
+
+
+pixels = create_pixels()
+hardware_available = neopixel is not None and board is not None
 
 def setPixelColor(pixelNumber : int, color : tuple):
     if pixelNumber < numberOfPixels:
@@ -25,38 +56,40 @@ def rainbowCycle(pause : float = 0.1):
 
     colorOrder : list[tuple] = [red, orange, yellow, green, cyan, blue, magenta]
 
+    cycles : int = 0
     while True:
-        cycles : int = 0
         for i in range(numberOfPixels):
             pixelBuffer[i] = colorOrder[(i + cycles) % len(colorOrder)]
             pixels[i] = pixelBuffer[i]
-            pixels.show()
+            # pixels.show()
         cycles += 1
         if cycles >= 25:
-            pixels.fill((0, 0, 0)) # Turn off all pixels
-            pixels.show()
+            # pixels.fill((0, 0, 0)) # Turn off all pixels
+            # pixels.show()
             break
         time.sleep(pause)
 
 if __name__ == "__main__":
-    while True:
-        cycle : int = 0
+    if not hardware_available:
+        print("Running in software fallback mode because no Raspberry Pi LED hardware was detected.")
+        rainbowCycle(0.1)
+    else:
+        while True:
+            # # red
+            # pixels.fill((255, 0, 0))
+            # pixels.show()
+            # time.sleep(0.5)
+            # # green
+            # pixels.fill((0, 255, 0))
+            # pixels.show()
+            # time.sleep(0.5)
+            # # cyan
+            # pixels.fill((0, 255, 255))
+            # pixels.show()
+            # time.sleep(0.5)
+            # # magenta
+            # pixels.fill((255, 0, 255))
+            # pixels.show()
+            # time.sleep(0.5)
 
-        # red
-        pixels.fill((255, 0, 0))
-        pixels.show()
-        time.sleep(0.5)
-        # green
-        pixels.fill((0, 255, 0))
-        pixels.show()
-        time.sleep(0.5)
-        # cyan
-        pixels.fill((0, 255, 255))
-        pixels.show()
-        time.sleep(0.5)
-        # magenta
-        pixels.fill((255, 0, 255))
-        pixels.show()
-        time.sleep(0.5)
-
-        rainbowCycle(0.1)  # rainbow cycle with 100ms delay per step
+            rainbowCycle(0.1)  # rainbow cycle with 100ms delay per step
